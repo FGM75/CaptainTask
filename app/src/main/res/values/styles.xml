@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="HeaderStyle">
+        <item name="android:background">#79bd8f</item>
+        <!-- Otros atributos según tus necesidades -->
+    </style>
+
+
+
+
+
+
+</resources>
