@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">CaptainTask</string>
+    <string name="password">12345678</string>
+    <string name="email">ziinikelputoamo@gmail.com</string>
+    <string name="forgot_password">Olvide la Contraseña</string>
+    <string name="login">entrar</string>
+    <string name="emailtext">Email</string>
+    <string name="introduceemailtext">Introduce tu Email</string>
+    <string name="Iniciar_Sesion">Iniciar Sesion</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="Register">Registrate</string>
+    <string name="recuperacion_contraseña">Recuperacion de Contraseña</string>
+    <string name="codigo_verificacion">Codigo de Verificacion</string>
+    <string name="next">Siguiente</string>
+    <string name="restablecer_contraseña">Restablecer la Contraseña</string>
+    <string name="renovar_contraseña">¡Es hora de renovarse! Crea una nueva clave secreta</string>
+    <string name="nueva_contraseña">Nueva Contraseña</string>
+    <string name="confirmar_contraseña">Confirmar Contraseña</string>
+    <string name="Registrate">Regístrare</string>
+    <string name="Crea_tu_contraseña">Crea tu Contraseña</string>
 </resources>
