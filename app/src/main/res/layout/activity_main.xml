@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/fondo"
     tools:context=".MainActivity">
 
     <ImageView
@@ -23,7 +23,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
 
 
     <TextView
@@ -33,9 +35,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/emailtext"
-        app:layout_constraintBottom_toTopOf="@+id/emailEditText"
-
-        />
+        app:layout_constraintBottom_toTopOf="@+id/emailEditText" />
 
     <EditText
         android:id="@+id/emailEditText"

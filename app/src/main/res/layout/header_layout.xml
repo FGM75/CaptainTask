@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="75dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,12 +13,14 @@
 
     <!-- Foto de perfil a la izquierda -->
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@drawable/foto_ziinik"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/CaptainTask_logo"
         android:scaleType="centerCrop"
         android:layout_margin="20dp"
         android:layout_gravity="center_vertical"/>
+
+
 
     <!-- Logo en el centro -->
     <ImageView
@@ -29,10 +34,12 @@
 
     <!-- Otra imagen a la derecha -->
     <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:src="@drawable/menu_tres_barras"
         android:scaleType="centerCrop"
         android:layout_margin="20dp"
         android:layout_gravity="center_vertical"/>
+
+
 </LinearLayout>
