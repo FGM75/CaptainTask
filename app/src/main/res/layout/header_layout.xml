@@ -15,7 +15,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/CaptainTask_logo"
+        android:src="@drawable/foto_ziinik"
         android:scaleType="centerCrop"
         android:layout_margin="20dp"
         android:layout_gravity="center_vertical"/>
@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:src="@drawable/CaptainTask_logo"
+        android:src="@drawable/captaintask_logo"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
         />
