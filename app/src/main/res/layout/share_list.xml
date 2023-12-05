@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"></LinearLayout>
 
+
     <include layout="@layout/header_layout" />
 
-    <!-- Línea negra en la parte inferior -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -34,7 +34,11 @@
             android:textSize="35dp" />
 
 
-
+    <include
+        layout="@layout/search_box_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="32dp"/>
 
     <TextView
         android:layout_marginTop="20dp"
