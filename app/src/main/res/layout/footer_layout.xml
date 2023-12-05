@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom"
-    android:background="#79bd8f"
+    android:background="@color/fondo"
     android:orientation="horizontal">
 
 
@@ -24,7 +24,7 @@
         android:layout_weight="1"
         android:padding="8dp"
         android:scaleType="centerInside"
-        android:src="@drawable/" />
+        android:src="@drawable/baseline_folder_black_36" />
 
 
     <ImageView
