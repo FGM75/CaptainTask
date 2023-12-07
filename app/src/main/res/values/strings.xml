@@ -21,7 +21,7 @@
     <string name="legalTerms">
         <p><b>Términos y Condiciones de Uso de la Aplicación</b></p>
         <p><b>Última actualización:0.0.011</b> [06/12/2023].</p>
-        <p>Por favor, lea estos términos y condiciones, cuidadosamente antes de utilizar la aplicación móvil ('la Aplicación') operada por [CAPTAINTASK]).</p>
+        <p>Por favor, lea estos términos y condiciones, cuidadosamente antes de utilizar la aplicación móvil operada por [CAPTAINTASK]).</p>
         <ol>
             <li><b>1.Aceptación de los Términos</b><br/>
             Al acceder y utilizar la Aplicación, usted acepta cumplir con estos Términos y todas las leyes y regulaciones aplicables. Si no está de acuerdo con alguno de estos términos, se le prohíbe usar o acceder a esta aplicación.</li>
@@ -43,11 +43,10 @@
             <li><b>6. Cambios en los Términos</b><br/>
             Nos reservamos el derecho de modificar estos Términos en cualquier momento. Los cambios serán efectivos inmediatamente después de la publicación de los términos modificados en la Aplicación. Le recomendamos revisar periódicamente los Términos.</li>
 
-            <li><b>7. Ley Aplicable</b></br>
+            <li><b>7. Ley Aplicable</b></li>
             Estos Términos se rigen por y se interpretan de acuerdo con las leyes [mencionar la jurisdicción] y usted se somete irrevocablemente a la jurisdicción exclusiva de los tribunales de esa jurisdicción.
         </ol>
     </string>
-
     <string name="contacto_html">
         <!DOCTYPE html>
 <html lang="es">
@@ -62,7 +61,7 @@
 
     <h2>Información de Contacto:</h2>
     <ul>
-        <li><strong>Correo Electrónico:</strong> <a href="mailto:info@example.com">CaptainTask@gmail.com</a></li>
+        <li><strong>Correo Electrónico:</strong> <a href="mailto:CaptainTask@gmail.com">CaptainTask@gmail.com</a></li>
         <li><strong>Teléfono de Atención al Cliente:</strong> No tenemos numero de telefono, no queremos llamadas</li>
         <li><strong>Horario de Atención:</strong> Tampoco trabajamos todos los dias, no recibiras atención</li>
     </ul>
