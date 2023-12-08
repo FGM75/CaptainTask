@@ -18,10 +18,70 @@
     <string name="confirmar_contraseña">Confirmar Contraseña</string>
     <string name="Registrate">Regístrare</string>
     <string name="Crea_tu_contraseña">Crea tu Contraseña</string>
+
     <string name="Legal">Legal</string>
     <string name="Cambiar_Idioma">Cambiar Idioma</string>
     <string name="Contacto">Contacto</string>
     <string name="Cerrar_Sesion">Cerrar Sesion</string>
     <string name="añadir">Añadir</string>
     <string name="Notificaciones">Notificaciones</string>
+
+    <string name="legalTerms">
+        <p><b>Términos y Condiciones de Uso de la Aplicación</b></p>
+        <p><b>Última actualización:0.0.011</b> [06/12/2023].</p>
+        <p>Por favor, lea estos términos y condiciones, cuidadosamente antes de utilizar la aplicación móvil operada por [CAPTAINTASK]).</p>
+        <ol>
+            <li><b>1.Aceptación de los Términos</b><br/>
+            Al acceder y utilizar la Aplicación, usted acepta cumplir con estos Términos y todas las leyes y regulaciones aplicables. Si no está de acuerdo con alguno de estos términos, se le prohíbe usar o acceder a esta aplicación.</li>
+
+            <li><b>2.Uso de la Aplicación</b><br/>
+            Usted reconoce y acepta que el uso de la Aplicación es bajo su propio riesgo y responsabilidad.
+            Nos reservamos el derecho de modificar o discontinuar la Aplicación en cualquier momento sin previo aviso.</li>
+
+            <li><b>3.Privacidad</b><br/>
+            La recopilación y el uso de la información personal están sujetos a nuestra Política de Privacidad, que forma parte de estos Términos. Al utilizar la Aplicación, usted acepta nuestra recopilación y uso de información de acuerdo con nuestra Política de Privacidad.</li>
+
+            <li><b> 4.Propiedad Intelectual</b><br/>
+            La Aplicación y su contenido original, características y funcionalidades son propiedad de [Nombre de la Empresa o Desarrollador] y están protegidos por derechos de autor y otras leyes de propiedad intelectual.
+            Usted no puede reproducir, distribuir, modificar, transmitir, o utilizar el contenido de la Aplicación sin nuestro permiso previo por escrito.</li>
+
+            <li><b>5. Limitación de Responsabilidad</b><br/>
+            En ningún caso [Nombre de la Empresa o Desarrollador] será responsable de daños directos, indirectos, especiales, incidentales o consecuentes que surjan del uso o la imposibilidad de uso de la Aplicación.</li>
+
+            <li><b>6. Cambios en los Términos</b><br/>
+            Nos reservamos el derecho de modificar estos Términos en cualquier momento. Los cambios serán efectivos inmediatamente después de la publicación de los términos modificados en la Aplicación. Le recomendamos revisar periódicamente los Términos.</li>
+
+            <li><b>7. Ley Aplicable</b></li>
+            Estos Términos se rigen por y se interpretan de acuerdo con las leyes [mencionar la jurisdicción] y usted se somete irrevocablemente a la jurisdicción exclusiva de los tribunales de esa jurisdicción.
+        </ol>
+    </string>
+    <string name="contacto_html">
+<head>
+    <title>CaptainTask</title>
+</head>
+<br />
+
+    <br /><p>¡Estamos encantados de saber de ti!</p>
+
+    <p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte y mejorar tu experiencia con nuestra aplicación.</p>
+
+    <h2>Información de Contacto:</h2>
+    <ul>
+        <li><strong>Correo Electrónico:</strong> <a href="mailto:CaptainTask@gmail.com">CaptainTask@gmail.com</a></li>
+        <li><strong>Teléfono de Atención al Cliente:</strong> No tenemos numero de telefono, no queremos llamadas</li>
+        <li><strong>Horario de Atención:</strong> Tampoco trabajamos todos los dias, no recibiras atención</li>
+    </ul>
+
+    <p>También puedes seguirnos en nuestras redes sociales para recibir las últimas actualizaciones y noticias:</p>
+    <ul>
+        <li><strong>Facebook:</strong> <a href="https://www.facebook.com/CaptainTask" target="_blank">facebook.com/CaptainTask</a></li>
+        <li><strong>Twitter:</strong> <a href="https://twitter.com/CaptainTask" target="_blank">twitter.com/CaptainTask</a></li>
+    </ul>
+
+    <p>Agradecemos tu apoyo y esperamos que disfrutes usando nuestra aplicación.</p>
+
+    <p><br/>¡Gracias!
+        El Equipo de CaptainTask</p>
+    </string>
+
 </resources>
