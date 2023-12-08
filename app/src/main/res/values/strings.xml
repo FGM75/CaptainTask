@@ -18,4 +18,10 @@
     <string name="confirmar_contraseña">Confirmar Contraseña</string>
     <string name="Registrate">Regístrare</string>
     <string name="Crea_tu_contraseña">Crea tu Contraseña</string>
+    <string name="Legal">Legal</string>
+    <string name="Cambiar_Idioma">Cambiar Idioma</string>
+    <string name="Contacto">Contacto</string>
+    <string name="Cerrar_Sesion">Cerrar Sesion</string>
+    <string name="añadir">Añadir</string>
+    <string name="Notificaciones">Notificaciones</string>
 </resources>
