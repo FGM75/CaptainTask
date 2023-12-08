@@ -18,6 +18,14 @@
     <string name="confirmar_contraseña">Confirmar Contraseña</string>
     <string name="Registrate">Regístrare</string>
     <string name="Crea_tu_contraseña">Crea tu Contraseña</string>
+
+    <string name="Legal">Legal</string>
+    <string name="Cambiar_Idioma">Cambiar Idioma</string>
+    <string name="Contacto">Contacto</string>
+    <string name="Cerrar_Sesion">Cerrar Sesion</string>
+    <string name="añadir">Añadir</string>
+    <string name="Notificaciones">Notificaciones</string>
+
     <string name="legalTerms">
         <p><b>Términos y Condiciones de Uso de la Aplicación</b></p>
         <p><b>Última actualización:0.0.011</b> [06/12/2023].</p>
@@ -75,4 +83,5 @@
     <p><br/>¡Gracias!
         El Equipo de CaptainTask</p>
     </string>
+
 </resources>
