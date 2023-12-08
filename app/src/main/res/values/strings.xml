@@ -48,14 +48,12 @@
         </ol>
     </string>
     <string name="contacto_html">
-        <!DOCTYPE html>
-<html lang="es">
 <head>
     <title>CaptainTask</title>
 </head>
-<body>
+<br />
 
-    <br><p>¡Estamos encantados de saber de ti!</p></br>
+    <br /><p>¡Estamos encantados de saber de ti!</p>
 
     <p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte y mejorar tu experiencia con nuestra aplicación.</p>
 
@@ -74,13 +72,7 @@
 
     <p>Agradecemos tu apoyo y esperamos que disfrutes usando nuestra aplicación.</p>
 
-    <p>¡Gracias!<br>
-    El Equipo de CaptainTask</p>
-
-</body>
-</html>
-
-</string>
-
-
+    <p><br/>¡Gracias!
+        El Equipo de CaptainTask</p>
+    </string>
 </resources>
