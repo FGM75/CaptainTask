@@ -21,6 +21,51 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SavedActivity"
+            android:label="Saved Activity"
+            />
+        <activity android:name=".RecoverPassword"
+            android:label="Recover Password"/>
+        <activity
+            android:name=".Register"
+            android:label="Registro" />
+        <activity
+            android:name=".ResetPassword"
+            android:label="Resetear Contraseña" />
+        <activity
+            android:name=".NavegationMenu"
+            android:label="Menú de Navegación" />
+        <activity
+            android:name=".SearchProducts"
+            android:label="Buscar Productos" />
+
+        <activity
+            android:name=".Filter"
+            android:label="Filtrar" />
+        <activity
+            android:name=".PersonalInformation"
+            android:label="Información Personal" />
+        <activity
+            android:name=".Header"
+            android:label="Header" />
+        <activity
+            android:name=".Footer"
+            android:label="Footer" />
+        <activity
+            android:name=".LegalTerms"
+            android:label="LegalTerms" />
+
+        <activity
+            android:name=".Contact"
+            android:label="Contact" />
+
+        <activity
+            android:name=".AddObject"
+            android:label="AddObject" /><activity
+        android:name=".ShareList"
+        android:label="ShareList" />
+
     </application>
 
 </manifest>

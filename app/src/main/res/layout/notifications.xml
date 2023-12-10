@@ -9,6 +9,7 @@
 
 
     <TextView
+        style="@style/FontBold"
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,6 +49,7 @@
 
             <!-- Primer TextView -->
             <TextView
+                style="@style/FontRegular"
                 android:id="@+id/firstTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,6 +60,7 @@
 
             <!-- Segundo TextView -->
             <TextView
+                style="@style/FontRegular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -97,6 +100,7 @@
 
             <!-- Primer TextView -->
             <TextView
+                style="@style/FontRegular"
                 android:id="@+id/secondTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,6 +111,7 @@
 
             <!-- Segundo TextView -->
             <TextView
+                style="@style/FontRegular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -155,6 +160,7 @@
 
             <!-- Segundo TextView -->
             <TextView
+                style="@style/FontRegular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

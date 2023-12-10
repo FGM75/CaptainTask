@@ -24,9 +24,11 @@
             <include layout="@layout/search_box_layout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_marginStart="32dp"/>
 
             <ImageView
+                android:onClick="irAAddObject"
                 android:layout_width="50dp"
                 android:layout_height="51dp"
                 android:layout_marginTop="35dp"
@@ -39,12 +41,26 @@
 
         <!-- TextView con weight -->
         <TextView
+            style="@style/FontRegular"
             android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="137 resultados encontrados"
+            android:layout_marginStart="32dp" />
+
+
+        <!-- Contenido principal -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="137 resultados encontrados"
-            android:layout_marginStart="32dp" />
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="@android:color/white"/>
+
 
     </LinearLayout>
 

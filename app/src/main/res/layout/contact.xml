@@ -16,6 +16,7 @@
         app:srcCompat="@drawable/captaintask_logo" />
 
     <TextView
+        style="@style/FontBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            style="@style/FontRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/contacto_html"

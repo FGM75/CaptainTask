@@ -9,7 +9,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_marginBottom="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -19,7 +18,8 @@
         android:hint="Buscar">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="349dp"
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
 
