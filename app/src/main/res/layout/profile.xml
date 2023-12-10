@@ -9,12 +9,12 @@
 
 
     <ImageView
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="32dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/iccancel_97589"
+        android:src="@drawable/baseline_close_black_48"
         app:tint="@color/texto" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -24,13 +24,14 @@
         android:src="@drawable/foto_ziinik" />
 
     <TextView
+        style="@style/FontBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:textSize="20dp"
         android:text="[NombreUsuario]"/>
     <TextView
+        style="@style/FontBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -41,9 +42,9 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
         android:background="@android:color/black" />
 
     <LinearLayout
@@ -57,14 +58,14 @@
             android:id="@+id/icono"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="32dp"
             android:src="@drawable/profile_icon"/>
 
         <TextView
+            style="@style/FontRegular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Informacion Personal"
-            android:textSize="18sp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"/>
 
@@ -73,8 +74,8 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
         android:background="@android:color/black" />
 
     <LinearLayout
@@ -88,13 +89,14 @@
             android:layout_marginLeft="20dp"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginStart="32dp"
             android:src="@drawable/notificacion_icon" />
 
         <TextView
+            style="@style/FontRegular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Notificaciones"
-            android:textSize="18sp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"/>
 
@@ -102,8 +104,8 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
         android:background="@android:color/black" />
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -116,13 +118,14 @@
             android:layout_marginLeft="20dp"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginStart="32dp"
             android:src="@drawable/like_icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Guardados"
-            android:textSize="18sp"
+            style="@style/FontRegular"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"/>
 
@@ -130,8 +133,8 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
         android:background="@android:color/black" />
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -144,13 +147,14 @@
             android:layout_marginLeft="20dp"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginStart="32dp"
             android:src="@drawable/settings_icon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Configuración"
-            android:textSize="18sp"
+            style="@style/FontRegular"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="16dp"/>
 

@@ -5,6 +5,38 @@
         <!-- Otros atributos según tus necesidades -->
     </style>
 
+    <style name="BotonRectangular" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">@drawable/boton_rectangular_background</item>
+    </style>
+
+    <!-- Estilo de fuente regular -->
+    <style name="FontRegular">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Estilo de fuente negrita -->
+    <style name="FontBold">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="FontBoldTitulo">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+
+    </style>
+
+    <!-- Estilo de fuente en itálica -->
+    <style name="FontItalic">
+        <item name="android:fontFamily">@font/roboto_italic</item>
+    </style>
+
+
+
+
+
+
+
 
 
 

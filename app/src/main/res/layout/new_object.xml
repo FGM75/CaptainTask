@@ -10,10 +10,11 @@
     <include layout="@layout/header_layout" />
 
     <TextView
+        style="@style/FontBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_margin="32dp"
         android:textSize="30dp"
         android:text="[Nombre producto]" />
 
@@ -25,16 +26,20 @@
         android:src="@drawable/harina_cositas" />
 
     <TextView
+        style="@style/FontRegular"
         android:layout_width="wrap_content"
         android:textSize="15dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:text="La harina de trigo, la más común y versátil, contiene gluten, una proteína que proporciona elasticidad y estructura a las masas. Dependiendo del grado de refinamiento, la harina puede ser clasificada en diversas categorías, como harina integral (que conserva el salvado y el germen), harina blanca (más refinada, sin salvado ni germen), harina de trigo sarraceno, harina de maíz, entre otras."/>
 
 
     <Button
+        style="@style/BotonRectangular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

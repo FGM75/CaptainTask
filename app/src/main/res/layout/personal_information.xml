@@ -33,11 +33,12 @@
         android:padding="16dp">
 
         <TextView
+            style="@style/FontBold"
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginTop="32dp"
+            android:layout_margin="32dp"
             android:gravity="center_horizontal"
             android:text="Ziinik" />
 
@@ -59,11 +60,12 @@
         android:padding="16dp">
 
         <TextView
+            style="@style/FontRegular"
             android:id="@+id/cityName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginTop="32dp"
+            android:layout_margin="32dp"
             android:text="Barcelona"
             android:gravity="center_horizontal"/>
 

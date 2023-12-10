@@ -17,6 +17,7 @@
         app:srcCompat="@drawable/captaintask_logo" />
 
     <TextView
+        style="@style/FontBold"
         android:id="@+id/recu_contraseña"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +27,7 @@
 
 
     <TextView
+        style="@style/FontBold"
         android:id="@+id/emailTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +48,7 @@
 
 
     <TextView
+        style="@style/FontBold"
         android:id="@+id/codigo_verificacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +69,9 @@
 
 
     <Button
+        android:onClick="irAResetPassword"
         android:id="@+id/loginButton"
+        style="@style/BotonRectangular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

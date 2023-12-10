@@ -11,8 +11,10 @@
 
 
 
+
     <!-- Foto de perfil a la izquierda -->
     <de.hdodenhof.circleimageview.CircleImageView
+        android:onClick="irAPersonalInformation"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/foto_ziinik"
@@ -34,12 +36,14 @@
 
     <!-- Otra imagen a la derecha -->
     <ImageView
+        android:onClick="irANavigationMenu"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/menu_tres_barras"
         android:scaleType="centerCrop"
         android:layout_margin="20dp"
         android:layout_gravity="center_vertical"/>
+
 
 
 </LinearLayout>
