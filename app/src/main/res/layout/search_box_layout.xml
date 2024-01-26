@@ -11,7 +11,7 @@
         android:layout_marginBottom="32dp"
         android:layout_marginTop="32dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/baseline_search_black_20"
         app:startIconContentDescription="Search Icon"
         app:startIconTint="@color/texto"

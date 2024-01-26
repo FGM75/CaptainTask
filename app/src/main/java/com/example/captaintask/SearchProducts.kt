@@ -31,19 +31,20 @@ class SearchProducts : AppCompatActivity() {
         recyclerView.adapter = productoAdapter
 
     }
-    fun irAPersonalInformation(view: View) {
-        val intent = Intent(this, PersonalInformation::class.java)
+    fun irAProfile(view: View) {
+        val intent = Intent(this, Profile::class.java)
         startActivity(intent)
     }
     fun irANavigationMenu(view: View) {
         val intent = Intent(this, NavegationMenu::class.java)
         startActivity(intent)
     }
-    
+
     fun irAFilter(view: View) {
-        val intent = Intent(this, Filter::class.java)
+        val intent = Intent(this, com.example.captaintask.Filter::class.java)
         startActivity(intent)
     }
+
     fun irASaved(view: View) {
         val intent = Intent(this, SavedActivity::class.java)
         startActivity(intent)

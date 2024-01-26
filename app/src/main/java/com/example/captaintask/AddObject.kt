@@ -12,8 +12,8 @@ class AddObject : AppCompatActivity() {
         setContentView(R.layout.add_object)
 
     }
-    fun irAPersonalInformation(view: View) {
-        val intent = Intent(this, PersonalInformation::class.java)
+    fun irAProfile(view: View) {
+        val intent = Intent(this, Profile::class.java)
         startActivity(intent)
     }
     fun irANavigationMenu(view: View) {

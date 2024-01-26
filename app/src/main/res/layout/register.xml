@@ -70,7 +70,7 @@
 
 
     <Button
-        android:onClick="irASavedActivity"
+        android:onClick="RegisterButton"
         android:id="@+id/loginButton"
         style="@style/BotonRectangular"
         android:layout_width="match_parent"

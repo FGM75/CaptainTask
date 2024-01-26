@@ -82,8 +82,8 @@
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <Button
-        android:id="@+id/botonIrASaved"
-        android:onClick="irASavedActivity"
+        android:id="@+id/loginButton"
+
         style="@style/BotonRectangular"
         android:enabled="true"
         android:layout_width="match_parent"
@@ -102,7 +102,7 @@
 
 
     <TextView
-        android:onClick="irARecuContra"
+
         android:id="@+id/textViewForgotPassword"
         style="@style/FontRegular"
         android:layout_width="wrap_content"
@@ -114,8 +114,8 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:onClick="irARegister"
-        android:id="@+id/textViewLogin"
+
+        android:id="@+id/goToRegisterButton"
         style="@style/FontRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -14,7 +14,7 @@
 
     <!-- Foto de perfil a la izquierda -->
     <de.hdodenhof.circleimageview.CircleImageView
-        android:onClick="irAPersonalInformation"
+        android:onClick="irAProfile"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:src="@drawable/foto_ziinik"

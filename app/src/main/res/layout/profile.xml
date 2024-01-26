@@ -48,6 +48,7 @@
         android:background="@android:color/black" />
 
     <LinearLayout
+        android:onClick="irAPersonalInformation"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,6 +80,7 @@
         android:background="@android:color/black" />
 
     <LinearLayout
+        android:onClick="irANotifications"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,6 +110,7 @@
         android:layout_marginLeft="32dp"
         android:background="@android:color/black" />
     <LinearLayout
+        android:onClick="irASaved"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -137,6 +140,7 @@
         android:layout_marginLeft="32dp"
         android:background="@android:color/black" />
     <LinearLayout
+        android:onClick="irANavigationMenu"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
