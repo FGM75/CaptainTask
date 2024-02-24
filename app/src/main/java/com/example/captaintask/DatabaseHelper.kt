@@ -3,6 +3,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.captaintask.Producto
+
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -12,22 +14,26 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
         private const val CREATE_TABLE_USERS = "CREATE TABLE IF NOT EXISTS usuarios " +
                 "(id INTEGER PRIMARY KEY, correo TEXT UNIQUE, contraseña TEXT)"
+
+        private const val CREATE_TABLE_PRODUCTS = "CREATE TABLE IF NOT EXISTS productos " +
+                "(id INTEGER PRIMARY KEY, imagen INTEGER, titulo TEXT, descripcion TEXT, contador INTEGER)"
+
+
     }
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_TABLE_USERS)
+        db.execSQL(CREATE_TABLE_PRODUCTS)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        // Aquí puedes manejar actualizaciones de la base de datos si es necesario
+        // Handle database upgrades here if necessary
     }
 
     fun insertUsuario(correo: String, contraseña: String): Long {
         val db = writableDatabase
 
-        // Verificar si la contraseña cumple con los requisitos mínimos
         if (!contraseñaCumpleRequisitos(contraseña)) {
-            // La contraseña no cumple los requisitos mínimos
             return -1
         }
 
@@ -36,11 +42,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             put("contraseña", contraseña)
         }
 
-        // Insertar el usuario en la base de datos
         return try {
             db.insertOrThrow("usuarios", null, values)
         } catch (e: Exception) {
-            // Error al insertar debido a un correo duplicado
             -1
         }
     }
@@ -59,9 +63,58 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return result
     }
 
+    fun insertProducto(producto: Producto): Long {
+        val db = writableDatabase
+
+        // Verificar si el producto ya existe en la base de datos
+        val cursor = db.rawQuery("SELECT 1 FROM productos WHERE imagen = ? AND titulo = ? AND descripcion = ? AND contador = ?", arrayOf(producto.imagen.toString(), producto.titulo, producto.descripcion, producto.contador.toString()))
+
+        // Si el cursor tiene al menos un resultado, significa que el producto ya existe
+        if (cursor.count > 0) {
+            cursor.close()
+            return -1 // Devuelve -1 para indicar que el producto ya existe
+        }
+
+        cursor.close()
+
+        // Si el producto no existe, procede a insertarlo
+        val values = ContentValues().apply {
+            put("imagen", producto.imagen)
+            put("titulo", producto.titulo)
+            put("descripcion", producto.descripcion)
+            put("contador", producto.contador)
+        }
+
+        return db.insert("productos", null, values)
+    }
+
+    fun getProductos(): List<Producto> {
+        val productos = mutableListOf<Producto>()
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM productos", null)
+
+        while (cursor.moveToNext()) {
+            val imagenIndex = cursor.getColumnIndex("imagen")
+            val tituloIndex = cursor.getColumnIndex("titulo")
+            val descripcionIndex = cursor.getColumnIndex("descripcion")
+            val contadorIndex = cursor.getColumnIndex("contador")
+
+            if (imagenIndex != -1 && tituloIndex != -1 && descripcionIndex != -1 && contadorIndex != -1) {
+                val imagen = cursor.getInt(imagenIndex)
+                val titulo = cursor.getString(tituloIndex)
+                val descripcion = cursor.getString(descripcionIndex)
+                val contador = cursor.getInt(contadorIndex)
+                val producto = Producto(imagen, titulo, descripcion, contador)
+                productos.add(producto)
+            }
+        }
+
+        cursor.close()
+        return productos
+    }
+
+
     private fun contraseñaCumpleRequisitos(contraseña: String): Boolean {
-        // Verificar si la contraseña tiene al menos 6 caracteres,
-        // una mayúscula y una minúscula
         val regex = "^(?=.*[a-z])(?=.*[A-Z]).{6,}$".toRegex()
         return contraseña.matches(regex)
     }

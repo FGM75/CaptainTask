@@ -1,5 +1,4 @@
-package com.example.captaintask
-
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +6,11 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.captaintask.Producto
+import com.example.captaintask.R
 
-class ProductoAdapter(private val productos: List<Producto>) :
+class ProductoAdapter(private val context: Context, private val productos: MutableList<Producto>, private val listener: ProductoClickListener) :
     RecyclerView.Adapter<ProductoAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,7 +30,11 @@ class ProductoAdapter(private val productos: List<Producto>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val producto = productos[position]
 
-        holder.imageViewProducto.setImageResource(producto.imagen)
+        // Cargar la imagen del producto utilizando Glide u otra biblioteca de carga de imágenes
+        Glide.with(context)
+            .load(producto.imagen)
+            .into(holder.imageViewProducto)
+
         holder.textViewTitulo.text = producto.titulo
         holder.textViewDescripcion.text = producto.descripcion
         holder.textViewContador.text = producto.contador.toString()
@@ -37,17 +43,32 @@ class ProductoAdapter(private val productos: List<Producto>) :
         holder.btnIncrementar.setOnClickListener {
             producto.contador++
             holder.textViewContador.text = producto.contador.toString()
+            listener.onIncrementarClick(producto)
         }
 
         holder.btnDisminuir.setOnClickListener {
             if (producto.contador > 0) {
                 producto.contador--
                 holder.textViewContador.text = producto.contador.toString()
+                listener.onDisminuirClick(producto)
             }
         }
     }
 
     override fun getItemCount(): Int {
         return productos.size
+    }
+
+    // Interfaz para manejar eventos de clic en los botones
+    interface ProductoClickListener {
+        fun onIncrementarClick(producto: Producto)
+        fun onDisminuirClick(producto: Producto)
+    }
+
+    // Método para actualizar la lista de productos
+    fun actualizarProductos(nuevosProductos: List<Producto>) {
+        productos.clear()
+        productos.addAll(nuevosProductos)
+        notifyDataSetChanged()
     }
 }
