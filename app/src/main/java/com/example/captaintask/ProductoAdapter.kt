@@ -32,7 +32,7 @@ class ProductoAdapter(private val context: Context, private val productos: Mutab
 
         // Cargar la imagen del producto utilizando Glide u otra biblioteca de carga de imágenes
         Glide.with(context)
-            .load(producto.imagen)
+            .load(producto.imagenUri)
             .into(holder.imageViewProducto)
 
         holder.textViewTitulo.text = producto.titulo

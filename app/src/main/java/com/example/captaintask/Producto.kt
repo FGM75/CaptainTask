@@ -1,6 +1,8 @@
 package com.example.captaintask
 
-data class Producto(val imagen: Int, val titulo: String, val descripcion: String, var contador: Int){
+import android.net.Uri
+
+data class Producto(val imagenUri: Uri?, val titulo: String, val descripcion: String, var contador: Int){
     // Sobrescribir la función equals para comparar dos productos por nombre ignorando el caso
     override fun equals(other: Any?): Boolean {
         // Verificar si el objeto es nulo o no es un Producto

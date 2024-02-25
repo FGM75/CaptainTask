@@ -3,6 +3,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.net.Uri
 import com.example.captaintask.Producto
 
 
@@ -16,7 +17,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 "(id INTEGER PRIMARY KEY, correo TEXT UNIQUE, contraseña TEXT)"
 
         private const val CREATE_TABLE_PRODUCTS = "CREATE TABLE IF NOT EXISTS productos " +
-                "(id INTEGER PRIMARY KEY, imagen INTEGER, titulo TEXT, descripcion TEXT, contador INTEGER)"
+                "(id INTEGER PRIMARY KEY, imagen TEXT, titulo TEXT UNIQUE, descripcion TEXT, contador INTEGER)"
+
 
 
     }
@@ -67,7 +69,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db = writableDatabase
 
         // Verificar si el producto ya existe en la base de datos
-        val cursor = db.rawQuery("SELECT 1 FROM productos WHERE imagen = ? AND titulo = ? AND descripcion = ? AND contador = ?", arrayOf(producto.imagen.toString(), producto.titulo, producto.descripcion, producto.contador.toString()))
+        val cursor = db.rawQuery("SELECT 1 FROM productos WHERE imagen = ? AND titulo = ? AND descripcion = ? AND contador = ?", arrayOf(producto.imagenUri.toString(), producto.titulo, producto.descripcion, producto.contador.toString()))
 
         // Si el cursor tiene al menos un resultado, significa que el producto ya existe
         if (cursor.count > 0) {
@@ -79,14 +81,20 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
         // Si el producto no existe, procede a insertarlo
         val values = ContentValues().apply {
-            put("imagen", producto.imagen)
             put("titulo", producto.titulo)
             put("descripcion", producto.descripcion)
             put("contador", producto.contador)
         }
 
+        // Verificar si la URI de la imagen no es nula antes de agregarla a los valores
+        producto.imagenUri?.let { uri ->
+            values.put("imagen", uri.toString()) // Convertir la URI a String
+        }
+
+        // Insertar el producto en la base de datos
         return db.insert("productos", null, values)
     }
+
 
     fun getProductos(): List<Producto> {
         val productos = mutableListOf<Producto>()
@@ -100,11 +108,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             val contadorIndex = cursor.getColumnIndex("contador")
 
             if (imagenIndex != -1 && tituloIndex != -1 && descripcionIndex != -1 && contadorIndex != -1) {
-                val imagen = cursor.getInt(imagenIndex)
+                val imagenUriString = cursor.getString(imagenIndex)
+                val imagenUri = Uri.parse(imagenUriString) // Convertir la cadena de URI a URI
                 val titulo = cursor.getString(tituloIndex)
                 val descripcion = cursor.getString(descripcionIndex)
                 val contador = cursor.getInt(contadorIndex)
-                val producto = Producto(imagen, titulo, descripcion, contador)
+                val producto = Producto(imagenUri, titulo, descripcion, contador)
                 productos.add(producto)
             }
         }
@@ -114,8 +123,23 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
 
+
     private fun contraseñaCumpleRequisitos(contraseña: String): Boolean {
         val regex = "^(?=.*[a-z])(?=.*[A-Z]).{6,}$".toRegex()
         return contraseña.matches(regex)
     }
+
+    //funcion para verificar si el producto existe en la base de datos
+    fun existeProducto(dbHelper: DatabaseHelper, nombre: String): Boolean {
+        val db = dbHelper.readableDatabase
+        val query = "SELECT 1 FROM productos WHERE LOWER(titulo) = LOWER(?)"
+        val cursor = db.rawQuery(query, arrayOf(nombre.toLowerCase()))
+        val existe = cursor.count > 0
+        cursor.close()
+        return existe
+    }
+
+
+
+
 }
