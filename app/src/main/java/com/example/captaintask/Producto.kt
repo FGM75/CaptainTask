@@ -19,5 +19,18 @@ data class Producto(val imagenUri: Uri?, val titulo: String, val descripcion: St
     override fun hashCode(): Int {
         return titulo.toLowerCase().hashCode()
     }
+
+
+    //pruebas unitarias
+        fun aumentarCantidad(contador: Int) {
+            this.contador += contador
+        }
+
+        fun disminuirCantidad(contador: Int) {
+            this.contador -= contador
+            if (this.contador < 0) {
+                this.contador = 0
+            }
+        }
 }
 

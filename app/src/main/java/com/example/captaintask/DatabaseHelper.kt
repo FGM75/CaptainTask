@@ -69,7 +69,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db = writableDatabase
 
         // Verificar si el producto ya existe en la base de datos
-        val cursor = db.rawQuery("SELECT 1 FROM productos WHERE imagen = ? AND titulo = ? AND descripcion = ? AND contador = ?", arrayOf(producto.imagenUri.toString(), producto.titulo, producto.descripcion, producto.contador.toString()))
+        val cursor = db.rawQuery("SELECT 1 FROM productos WHERE LOWER(titulo) = LOWER(?)", arrayOf(producto.titulo))
 
         // Si el cursor tiene al menos un resultado, significa que el producto ya existe
         if (cursor.count > 0) {
@@ -94,6 +94,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         // Insertar el producto en la base de datos
         return db.insert("productos", null, values)
     }
+
 
 
     fun getProductos(): List<Producto> {
@@ -130,8 +131,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     //funcion para verificar si el producto existe en la base de datos
-    fun existeProducto(dbHelper: DatabaseHelper, nombre: String): Boolean {
-        val db = dbHelper.readableDatabase
+    fun existeProducto( nombre: String): Boolean {
+        val db = readableDatabase
         val query = "SELECT 1 FROM productos WHERE LOWER(titulo) = LOWER(?)"
         val cursor = db.rawQuery(query, arrayOf(nombre.toLowerCase()))
         val existe = cursor.count > 0

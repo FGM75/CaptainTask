@@ -67,7 +67,7 @@ class AddObject : AppCompatActivity() {
             val dbHelper = DatabaseHelper(this)
 
             // Verificar si ya existe un producto con el mismo nombre
-            if (dbHelper.existeProducto(dbHelper,nombre)) {
+            if (dbHelper.existeProducto(nombre)) {
                 Toast.makeText(this, "Ya existe un producto con el mismo nombre", Toast.LENGTH_SHORT).show()
                 return
             }
