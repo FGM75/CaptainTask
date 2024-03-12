@@ -27,18 +27,18 @@ class DatabaseHelperTest {
 
     @Test
     fun testInsertProducto() {
-        val producto = Producto(null, "aguacate", "Descripción del Producto 2", 0)
+        val producto = Producto(null, "vaso", "Descripción del Producto 2", 0)
         val id = dbHelper.insertProducto(producto)
         assertNotEquals(-1L, id)
     }
 
     @Test
     fun testExisteProducto() {
-        val producto = Producto(null, "Arroz", "Descripción del Producto 1", 0)
+        val producto = Producto(null, "lapiz", "Descripción del Producto 1", 0)
         dbHelper.insertProducto(producto)
 
-        assertTrue(dbHelper.existeProducto("Arroz"))
-        assertFalse(dbHelper.existeProducto("Pasta"))
+        assertTrue(dbHelper.existeProducto("lapiz"))
+        assertFalse(dbHelper.existeProducto("dardo"))
     }
 }
 

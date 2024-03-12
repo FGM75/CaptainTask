@@ -6,7 +6,9 @@
     </style>
 
     <style name="BotonRectangular" parent="Widget.AppCompat.Button">
-        <item name="android:backgroundTint">@drawable/boton_rectangular_background</item>
+        <item name="android:background">@drawable/boton_rectangular_background</item>
+
+
     </style>
 
     <!-- Estilo de fuente regular -->

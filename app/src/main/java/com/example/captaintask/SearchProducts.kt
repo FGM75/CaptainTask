@@ -50,7 +50,7 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
 
         // Verificar si cada producto de la base de datos ya está en la lista
         for (productoDB in productosDB) {
-            if (!productos.any { it.titulo.toLowerCase() == productoDB.titulo.toLowerCase() }) {
+            if (!productos.any { it.titulo.lowercase() == productoDB.titulo.lowercase() }) {
                 // El producto no está en la lista, así que lo agregamos
                 productos.add(productoDB)
             }
@@ -58,6 +58,7 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
 
         // Actualizar el RecyclerView con la lista de productos
         productoAdapter.notifyDataSetChanged()
+
     }
 
     private fun obtenerRutaImagen(idDrawable: Int): String {
@@ -65,7 +66,7 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
     }
 
     private fun insertarProductoSiNoExiste(dbHelper: DatabaseHelper, producto: Producto) {
-        if (!productos.any { it.titulo.toLowerCase() == producto.titulo.toLowerCase() }) {
+        if (!productos.any { it.titulo.lowercase() == producto.titulo.lowercase() }) {
             dbHelper.insertProducto(producto)
         }
     }
@@ -109,6 +110,10 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
         intent.putExtra("imagenUri", imagenUri.toString())
         startActivity(intent)
     }
+
+
+
+
     fun agregarProducto(imagenUri: Uri?) {
         val nombreEditText = findViewById<EditText>(R.id.editText1)
         val descripcionEditText = findViewById<EditText>(R.id.editText2)

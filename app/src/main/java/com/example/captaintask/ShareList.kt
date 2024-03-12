@@ -5,12 +5,25 @@ package com.example.captaintask
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ShareList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.share_list)
+
+        val textUser = findViewById<TextView>(R.id.TextUser)
+
+        // Obtener el correo electrónico almacenado en MainActivity
+        val user = MainActivity.correoUser
+
+        // Verificar si se ha almacenado un correo electrónico
+        if (user.isNotEmpty()){
+            // Establecer el texto en el TextView
+            textUser.text = "Hola $user, ¿te gustaría compartir tu lista?"
+
+        }
     }
     fun irANavigationMenu(view: View) {
         val intent = Intent(this, NavegationMenu::class.java)
