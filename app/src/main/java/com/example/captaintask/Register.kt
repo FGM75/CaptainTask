@@ -51,6 +51,7 @@ class Register : AppCompatActivity() {
 
 
 
+
    // fun irASavedActivity(view: View) {
         // Crear un Intent para iniciar SavedActivity
     //   val intent = Intent(this, SavedActivity::class.java)

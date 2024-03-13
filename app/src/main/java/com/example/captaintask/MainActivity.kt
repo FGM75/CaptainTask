@@ -51,9 +51,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         textViewForgotPassword.setOnClickListener {
-            // Agrega aquí la lógica para manejar la recuperación de contraseña
+
             startActivity(Intent(this, RecoverPassword::class.java))
-            // Puedes abrir otra actividad o mostrar un cuadro de diálogo, por ejemplo.
+
         }
     }
 
