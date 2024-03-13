@@ -6,8 +6,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,20 +25,38 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
 
     companion object {
         const val CODIGO_SELECCIONAR_IMAGEN = 1
+        const val REQUEST_CODE_ACTUALIZAR_LISTA_COMPRA = 1
     }
+
 
     private lateinit var productoAdapter: ProductoAdapter
     private lateinit var recyclerView: RecyclerView
     private val productos = mutableListOf<Producto>()
+    private lateinit var imageButton: ImageButton
 
+    private lateinit var productosDB: List<Producto>
+
+    private var searchText: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.search_products)
+        // Obtener el texto enviado desde la actividad anterior
+        searchText = intent.getStringExtra("searchText")
+
+        // Verificar si searchText se recibió correctamente
+        Log.d("SearchProducts", "searchText recibido: $searchText")
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         productoAdapter = ProductoAdapter(this, productos, this)
         recyclerView.adapter = productoAdapter
+        imageButton=findViewById(R.id.cargarProductos)
+        //se define aca afuera para poderse usar despues aunque me equivoque y no necesito usarla en otra clase
+        val textProducto=findViewById<TextView>(R.id.textViewCantidadProductos)
+
+        // Obtener el texto enviado desde la actividad anterior
+        searchText = intent.getStringExtra("searchText")
+
 
         // Cargar los productos desde la base de datos y actualizar el RecyclerView
         val dbHelper = DatabaseHelper(this)
@@ -46,7 +67,7 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
         insertarProductoSiNoExiste(dbHelper, Producto(Uri.parse("android.resource://${packageName}/${R.drawable.agua}"), "Agua", "Descripción del Producto 3", 0))
 
         // Obtener la lista actualizada de productos desde la base de datos
-        val productosDB = dbHelper.getProductos()
+        productosDB = dbHelper.getProductos()
 
         // Verificar si cada producto de la base de datos ya está en la lista
         for (productoDB in productosDB) {
@@ -59,6 +80,10 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
         // Actualizar el RecyclerView con la lista de productos
         productoAdapter.notifyDataSetChanged()
 
+        //le paso a otra variable la cantidad de productos que hay en el List
+        val cantidadProducto=productosDB.size
+        //muestro en el textView con la longitud del list de productos
+        textProducto.text="$cantidadProducto resultados encontrados"
     }
 
     private fun obtenerRutaImagen(idDrawable: Int): String {
@@ -73,10 +98,13 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
 
     override fun onIncrementarClick(producto: Producto) {
         // Implementa el comportamiento al hacer clic en el botón de incrementar
+
     }
 
     override fun onDisminuirClick(producto: Producto) {
         // Implementa el comportamiento al hacer clic en el botón de disminuir
+
+
     }
 
     // Métodos para cambiar de pantalla (código omitido por brevedad)
@@ -111,8 +139,9 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
         startActivity(intent)
     }
 
-
-
+    fun obtenerLongitudProductosDB(): Int {
+        return productosDB.size
+    }
 
     fun agregarProducto(imagenUri: Uri?) {
         val nombreEditText = findViewById<EditText>(R.id.editText1)
@@ -169,6 +198,77 @@ class SearchProducts : AppCompatActivity(), ProductoAdapter.ProductoClickListene
             inputStream.close()
         }
     }
+
+    /*fun cargarProductos(view: View) {
+        // verifica que searchText no sea nulo
+        searchText?.let { texto ->
+        // Obtener solo los productos con contador mayor que 0
+        val productosSeleccionados = obtenerProductosSeleccionados().filter { it.contador > 0 }
+
+        // Verificar si hay al menos un producto seleccionado
+
+
+        if (productosSeleccionados.isNotEmpty()) {
+            // Crear la ListaCompra con los productos seleccionados
+
+            val listaCompra = ListaCompra(texto, productosSeleccionados.toMutableList())
+
+            // Guardar la ListaCompra en la base de datos
+            val dbHelper = DatabaseHelper(view.context)
+            dbHelper.guardarListaCompra(listaCompra)
+
+            // Obtener las ListasCompra desde la base de datos
+            val listasDeCompra = dbHelper.obtenerListasCompra()
+
+            // Luego, iniciar la otra actividad con startActivityForResult
+            val intent = Intent(view.context, SavedActivity::class.java)
+            startActivityForResult(intent, REQUEST_CODE_ACTUALIZAR_LISTA_COMPRA)
+        } else {
+            // Mostrar un mensaje al usuario indicando que no hay productos seleccionados
+            Toast.makeText(view.context, "No hay productos seleccionados para añadir a la lista de compra", Toast.LENGTH_SHORT).show()
+        }
+    }
+        }*/
+    fun cargarProductos(view: View) {
+        // verifica que searchText no sea nulo
+        searchText?.let { texto ->
+            Log.d("SearchProducts", "Texto recibido para la lista de compra: $texto")
+
+            // Obtener solo los productos con contador mayor que 0
+            val productosSeleccionados = obtenerProductosSeleccionados().filter { it.contador > 0 }
+
+            // Verificar si hay al menos un producto seleccionado
+            if (productosSeleccionados.isNotEmpty()) {
+                Log.d("SearchProducts", "Productos seleccionados para la lista de compra: $productosSeleccionados")
+
+                // Crear la ListaCompra con los productos seleccionados
+                val listaCompra = ListaCompra(texto, productosSeleccionados.toMutableList())
+                Log.d("SearchProducts", "Lista de compra creada: $listaCompra")
+
+                // Guardar la ListaCompra en la base de datos
+                val dbHelper = DatabaseHelper(view.context)
+                dbHelper.guardarListaCompra(listaCompra)
+
+                // Obtener las ListasCompra desde la base de datos
+                val listasDeCompra = dbHelper.obtenerListasCompra()
+
+                // Luego, iniciar la otra actividad con startActivityForResult
+                val intent = Intent(view.context, SavedActivity::class.java)
+                startActivityForResult(intent, REQUEST_CODE_ACTUALIZAR_LISTA_COMPRA)
+            } else {
+                // Mostrar un mensaje al usuario indicando que no hay productos seleccionados
+                Toast.makeText(view.context, "No hay productos seleccionados para añadir a la lista de compra", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+
+    // Método para obtener los productos que están en la lista de compra
+    private fun obtenerProductosSeleccionados(): MutableList<Producto> {
+        return productos.filter { it.contador > 0 }.toMutableList()
+    }
+
 
 
 

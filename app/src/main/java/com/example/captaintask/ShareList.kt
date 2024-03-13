@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 
 class ShareList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,7 @@ class ShareList : AppCompatActivity() {
         // Verificar si se ha almacenado un correo electrónico
         if (user.isNotEmpty()){
             // Establecer el texto en el TextView
-            textUser.text = "Hola $user, ¿te gustaría compartir tu lista?"
+            textUser.text = "Hola $user, introduce el nombre de tu lista!"
 
         }
     }
@@ -48,7 +49,12 @@ class ShareList : AppCompatActivity() {
         startActivity(intent)
     }
     fun irASearchProducts(view: View) {
+        // Obtener el texto ingresado por el usuario
+        val searchText = findViewById<TextInputEditText>(R.id.searchEditText).text.toString()
+
+        // Guardar el texto en una variable
         val intent = Intent(this, SearchProducts::class.java)
+        intent.putExtra("searchText", searchText)  // Aquí se pasa el texto como un extra a la siguiente actividad
         startActivity(intent)
     }
 

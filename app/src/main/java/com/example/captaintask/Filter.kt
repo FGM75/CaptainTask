@@ -1,5 +1,6 @@
 package com.example.captaintask
 
+import DatabaseHelper
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,27 +10,36 @@ import androidx.recyclerview.widget.RecyclerView
 
 class Filter : AppCompatActivity() {
 
+
+    private lateinit var listaCompraAdapter: ListaCompraAdapter
+    private lateinit var recyclerView: RecyclerView
+    private val listasDeCompra = mutableListOf<ListaCompra>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.filter)
 
-        val listasCompras = listOf(
-            ListaCompra("Lista 1", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 2", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 3", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 4", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 5", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 6", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 7", R.drawable.baseline_edit_square_black_20),
-            // Agrega más listas según sea necesario
-        )
 
-        val recyclerView = findViewById<RecyclerView>(R.id.tuRecyclerView)
-        recyclerView.adapter = ListaCompraAdapter(listasCompras)
+        // Configurar RecyclerView
+        recyclerView = findViewById(R.id.tuRecyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
+        listaCompraAdapter = ListaCompraAdapter(listasDeCompra)
+        recyclerView.adapter = listaCompraAdapter
 
-
+        // Obtener las listas de compras desde la base de datos
+        obtenerListasCompraDesdeDB()
     }
+
+    private fun obtenerListasCompraDesdeDB() {
+        // Obtener las ListasCompra desde la base de datos
+        val dbHelper = DatabaseHelper(this)
+        listasDeCompra.clear() // Limpiar la lista actual antes de agregar las nuevas listas
+        listasDeCompra.addAll(dbHelper.obtenerListasCompra())
+
+        // Notificar al adaptador que los datos han cambiado
+        listaCompraAdapter.notifyDataSetChanged()
+    }
+
     fun irAProfile(view: View) {
         val intent = Intent(this, Profile::class.java)
         startActivity(intent)
