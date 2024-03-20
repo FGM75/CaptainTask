@@ -1,13 +1,11 @@
 package com.example.captaintask
 
-
-import android.content.ContentValues
+import DatabaseHelper
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-
 import android.widget.Toast
 
 class Register : AppCompatActivity() {
@@ -30,18 +28,21 @@ class Register : AppCompatActivity() {
             val correo = emailEditText.text.toString()
             val contraseña = passwordEditText.text.toString()
 
-            // Verificar si el correo y la contraseña no están vacíos
             if (correo.isNotEmpty() && contraseña.isNotEmpty()) {
-                // Insertar usuario en la base de datos
-                val id = dbHelper.insertUsuario(correo, contraseña)
+                if (validarContraseña(contraseña)) {
+                    val id = dbHelper.insertUsuario(correo, contraseña)
 
-                if (id > 0) {
-                    // Registro exitoso, redirigir a MainActivity
-                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
+                    if (id > 0) {
+                        Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    } else if (id == -1L) {
+                        Toast.makeText(this, "El correo electrónico ya está registrado", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Error al registrar. Intenta nuevamente", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
-                    Toast.makeText(this, "Error al registrar. Intenta nuevamente", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "La contraseña debe tener al menos 6 caracteres, una mayúscula y una minúscula", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
@@ -52,9 +53,15 @@ class Register : AppCompatActivity() {
 
 
 
+
    // fun irASavedActivity(view: View) {
         // Crear un Intent para iniciar SavedActivity
     //   val intent = Intent(this, SavedActivity::class.java)
     //  startActivity(intent)
     //}
+}
+    private fun validarContraseña(contraseña: String): Boolean {
+        val regex = Regex("^(?=.*[a-z])(?=.*[A-Z]).{6,}$")
+        return regex.matches(contraseña)
+    }
 }

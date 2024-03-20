@@ -1,5 +1,6 @@
 package com.example.captaintask
 
+import DatabaseHelper
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,25 +10,32 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class SavedActivity : AppCompatActivity() {
+
+    private lateinit var listaCompraAdapter: ListaCompraAdapter
+    private lateinit var recyclerView: RecyclerView
+    private val listasDeCompra = mutableListOf<ListaCompra>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.saved)
 
-        val listasCompras = listOf(
-            ListaCompra("Lista 1", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 2", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 3", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 4", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 5", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 6", R.drawable.baseline_edit_square_black_20),
-            ListaCompra("Lista 7", R.drawable.baseline_edit_square_black_20),
-            // Agrega más listas según sea necesario
-        )
+        // Configurar RecyclerView
+        recyclerView = findViewById(R.id.recyclerViewListaCompras)
+        recyclerView.layoutManager = GridLayoutManager(this, 2) // Cambiar a GridLayoutManager si prefieres
+        listaCompraAdapter = ListaCompraAdapter(listasDeCompra)
+        recyclerView.adapter = listaCompraAdapter
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewListaCompras)
-        recyclerView.adapter = ListaCompraAdapter(listasCompras)
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
+        obtenerListasCompraDesdeDB()
 
+    }
+
+    private fun obtenerListasCompraDesdeDB() {
+        // Obtener las ListasCompra desde la base de datos
+        val dbHelper = DatabaseHelper(this)
+        listasDeCompra.clear() // Limpiar la lista actual para evitar duplicados al actualizar
+        listasDeCompra.addAll(dbHelper.obtenerListasCompra())
+
+        // Actualizar el RecyclerView
+        listaCompraAdapter.notifyDataSetChanged()
     }
 
     fun irANavigationMenu(view: View) {

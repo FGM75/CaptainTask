@@ -4,6 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
@@ -20,6 +21,9 @@ class ListaCompraAdapter(private val listasCompras: List<ListaCompra>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val listaCompra = listasComprasFiltradas[position]
+
+        //esto coge el nombre que le coloca el usuario
+        holder.itemView.findViewById<TextView>(R.id.textViewNombreListaCompra).text = listaCompra.nombre
         // Configura tus vistas con los datos de listaCompra
     }
 

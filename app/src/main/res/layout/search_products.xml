@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <!-- Encabezado -->
@@ -23,7 +22,7 @@
 
             <include layout="@layout/search_box_layout"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="32dp"/>
 
@@ -36,17 +35,16 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginBottom="5dp"
                 android:src="@drawable/baseline_add_shopping_cart_black_20"
-                app:tint="@color/texto" />
+                 />
         </LinearLayout>
 
         <!-- TextView con weight -->
         <TextView
             style="@style/FontRegular"
-            android:id="@+id/textView"
+            android:id="@+id/textViewCantidadProductos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="137 resultados encontrados"
             android:layout_marginStart="32dp" />
 
 
@@ -61,8 +59,26 @@
             android:paddingBottom="8dp"
             android:background="@android:color/white"/>
 
-
     </LinearLayout>
+
+    <!-- Botón redondo en la esquina inferior derecha -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/cargarProductos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button_background"
+            android:src="@drawable/outline_send_black_24"
+            android:padding="16dp"
+            android:onClick="cargarProductos"
+            android:elevation="4dp"/> <!-- Agrega elevación para un efecto de sombra -->
+
+    </FrameLayout>
 
     <!-- Footer -->
     <include layout="@layout/footer_layout"
