@@ -64,4 +64,4 @@ class Register : AppCompatActivity() {
         val regex = Regex("^(?=.*[a-z])(?=.*[A-Z]).{6,}$")
         return regex.matches(contraseña)
     }
-}
+
