@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Filter">
+
+    <!-- Encabezado -->
+    <include layout="@layout/header_layout" />
+
+    <!-- Contenido principal y TextView con weight -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/FontBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="32dp"
+            android:textSize="30dp"
+            android:text="@string/Filtrar"/>
+
+        <!-- Contenido principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/search_box_layout"
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="Campo de búsqueda de listas de compras"
+                android:layout_marginStart="32dp"/>
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tuRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+        <!-- TextView con weight -->
+        <!-- <TextView
+             style="@style/FontRegular"
+             android:id="@+id/textView"
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             android:layout_weight="1"
+             android:text="137 resultados encontrados"
+             android:layout_marginStart="32dp" /> -->
+
+     </LinearLayout>
+
+     <!-- Footer -->
+    <include layout="@layout/footer_layout" />
+
+</LinearLayout>

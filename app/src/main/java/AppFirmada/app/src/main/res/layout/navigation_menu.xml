@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NavegationMenu">
+
+    <!-- Icono en la esquina superior derecha
+    <ImageView
+        android:id="@+id/iconoSuperiorDerecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/baseline_close_black_36" /> -->
+
+    <!-- Línea de separación negra -->
+    <View
+        android:id="@+id/lineaSeparadora"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+    <!-- Icono y texto en horizontal (Opción 1) -->
+
+    <!-- Línea de separación negra -->
+    <LinearLayout
+        android:onClick="irALegalActivity"
+        android:id="@+id/menuOpcion1"
+        android:layout_width="match_parent"
+        android:contentDescription="Opción del menú de navegación para ver los términos legales"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineaSeparadora"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/iconoOpcion1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_description_black_24" />
+
+        <TextView
+            android:id="@+id/textoOpcion1"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Legal" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineaSeparadoraOpcion1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuOpcion1"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+    <!-- Icono y texto en horizontal (Opción 2)
+    <LinearLayout
+        android:id="@+id/menuOpcion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineaSeparadoraOpcion1"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/iconoOpcion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_language_black_24" />
+
+        <TextView
+            style="@style/FontRegular"
+            android:id="@+id/textoOpcion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Cambiar_Idioma" />
+
+
+
+    </LinearLayout> -->
+
+    <!-- Repite el mismo patrón para las Opciones 3, 4 y 5 -->
+
+
+    <View
+        android:id="@+id/lineaSeparadoraOpcion2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuOpcion1"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+
+    <LinearLayout
+        android:onClick="irAContactoActivity"
+        android:id="@+id/menuOpcion3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineaSeparadoraOpcion2"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/iconoOpcion3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_contact_page_black_24" />
+
+        <TextView
+            style="@style/FontRegular"
+            android:id="@+id/textoOpcion3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Contacto" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/lineaSeparadoraOpcion3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuOpcion3"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+
+    <LinearLayout
+        android:onClick="irAMainActivity"
+        android:id="@+id/menuOpcion4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineaSeparadoraOpcion5"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/iconoOpcion4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_logout_black_24" />
+
+        <TextView
+            style="@style/FontRegular"
+            android:id="@+id/textoOpcion4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Cerrar_Sesion" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/lineaSeparadoraOpcion4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuOpcion4"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+    <LinearLayout
+        android:onClick="irAReportActivity"
+        android:id="@+id/menuOpcion5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineaSeparadoraOpcion3"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/iconoOpcion5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_contact_page_black_24" />
+
+        <TextView
+            style="@style/FontRegular"
+            android:id="@+id/textoOpcion5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Informe" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/lineaSeparadoraOpcion5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuOpcion5"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+
+
+
+</RelativeLayout>

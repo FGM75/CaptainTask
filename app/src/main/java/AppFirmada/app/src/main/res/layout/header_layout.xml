@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="#79bd8f">
+
+
+
+
+    <!-- Foto de perfil a la izquierda -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:onClick="irAProfile"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/foto_ziinik"
+        android:scaleType="centerCrop"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_vertical"/>
+
+
+
+    <!-- Logo en el centro -->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:src="@drawable/captaintask_logo"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        />
+
+    <!-- Otra imagen a la derecha -->
+    <ImageView
+        android:onClick="irANavigationMenu"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/menu_tres_barras"
+        android:scaleType="centerCrop"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_vertical"/>
+
+
+
+</LinearLayout>

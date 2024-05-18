@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShareList">
+
+    <!-- LinearLayout principal con layout_weight="1" -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Resto de tu diseño -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"></LinearLayout>
+
+        <include layout="@layout/header_layout" />
+
+
+        <TextView
+            android:id="@+id/TextUser"
+            style="@style/FontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+
+            android:textSize="25dp" />
+
+        <include
+            layout="@layout/search_box_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            />
+
+
+        <TextView
+            style="@style/FontRegular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:onClick="irASearchProducts"
+            android:contentDescription="Botón para NO compartir la lista de compras"
+            android:text="No deseo compartir mi lista"
+            android:textAlignment="center" />
+
+
+            <Button
+                android:id="@+id/startButton"
+                style="@style/BotonRectangular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:onClick="irASearchProducts"
+                android:text="Empezar" />
+
+    </LinearLayout>
+
+    <include layout="@layout/footer_layout"/>
+</LinearLayout>

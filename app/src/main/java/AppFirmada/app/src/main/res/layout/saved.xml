@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".SavedActivity">
+
+    <!-- Encabezado -->
+    <include layout="@layout/header_layout" />
+
+    <!-- Contenido principal y TextView con weight -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Contenido principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/FontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="31dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="30dp"
+                android:text="@string/Guardado"/>
+
+            <ImageView
+                android:onClick="irAShareList"
+                android:id="@+id/nueva_lista"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="Botón para crear una nueva lista de compras"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/baseline_post_add_black_20"
+                app:tint="@color/texto" />
+        </LinearLayout>
+
+        <!-- TextView con weight -->
+        <TextView
+            style="@style/FontRegular"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Has Guardado 3 compras"
+            android:layout_marginStart="32dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewListaCompras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_lista_compra" />
+
+
+
+    </LinearLayout>
+
+    <!-- Footer -->
+    <include layout="@layout/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

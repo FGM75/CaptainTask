@@ -169,7 +169,7 @@
         android:id="@+id/menuOpcion4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lineaSeparadoraOpcion3"
+        android:layout_below="@id/lineaSeparadoraOpcion5"
         android:orientation="horizontal"
         android:padding="16dp">
 
@@ -206,6 +206,51 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@android:color/black" />
+
+    <LinearLayout
+        android:onClick="irAReportActivity"
+        android:id="@+id/menuOpcion5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineaSeparadoraOpcion3"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/iconoOpcion5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/baseline_contact_page_black_24" />
+
+        <TextView
+            style="@style/FontRegular"
+            android:id="@+id/textoOpcion5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Informe" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/lineaSeparadoraOpcion5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/menuOpcion5"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/black" />
+
+
 
 
 </RelativeLayout>

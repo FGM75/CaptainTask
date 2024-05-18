@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/background_light">
+
+    <Spinner
+        android:id="@+id/data_type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/data_types"
+        android:contentDescription="Selector de tipo de datos para el informe"
+        android:background="@drawable/custom_spinner_background"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/generate_report_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generar Informe"
+        android:contentDescription="Botón para generar el informe"
+        android:backgroundTint="@color/principal"
+        android:textColor="@color/texto"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/notes_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Notas"
+            android:background="@color/edit_text_background"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/send_report_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar Informe"
+            android:contentDescription="Botón para enviar el informe"
+            android:backgroundTint="@color/principal"
+            android:textColor="@color/texto"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/export_pdf_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Exportar a PDF"
+            android:backgroundTint="@color/principal"
+            android:textColor="@color/texto"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/export_excel_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="Botón para exportar el informe a Excel"
+            android:text="Exportar a Excel"
+            android:backgroundTint="@color/principal"
+            android:textColor="@color/texto"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/graph_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</LinearLayout>
